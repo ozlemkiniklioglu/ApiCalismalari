@@ -4,6 +4,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class C07_Get_BodyTekrarlardanKurtulma {
 
@@ -43,11 +44,11 @@ public class C07_Get_BodyTekrarlardanKurtulma {
                     .assertThat()
                     .statusCode(200)
                     .contentType(ContentType.JSON)
-                    .body("firstname", Matchers.equalTo("Mary"),
-                        "lastname",Matchers.equalTo("Brown"),
-                        "totalprice",Matchers.equalTo(513),
-                        "depositpaid",Matchers.equalTo(true),
-                            "additionalneeds",Matchers.equalTo("Breakfast"));
+                    .body("firstname", equalTo("Mary"),
+                        "lastname", equalTo("Brown"),
+                        "totalprice", equalTo(513),
+                        "depositpaid", equalTo(true),
+                            "additionalneeds", equalTo("Breakfast"));
 
 
     }
